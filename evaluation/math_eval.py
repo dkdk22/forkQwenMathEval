@@ -108,7 +108,7 @@ def prepare_data(data_name, args):
 def setup(args):
     # load model
     available_gpus = os.environ["CUDA_VISIBLE_DEVICES"].split(",")
-    if args.use_vllm:
+    if False:
         llm = LLM(
             model=args.model_name_or_path,
             tensor_parallel_size=1,
@@ -124,7 +124,7 @@ def setup(args):
             )
     else:
         llm, tokenizer = load_hf_lm_and_tokenizer(
-            model_name_or_path=args.model_name_or_path,
+            model_name_or_path="Qwen/QwQ-32B",
             load_in_half=True,
             use_fast_tokenizer=True,
             use_safetensors=args.use_safetensors,
