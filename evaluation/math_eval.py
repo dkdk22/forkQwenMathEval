@@ -114,7 +114,7 @@ def setup(args):
             tensor_parallel_size=1,
             pipeline_parallel_size=args.pipeline_parallel_size,
             max_model_len=2048,      # Limit context length
-            dtype="bfloat16",
+            dtype="float16",
             trust_remote_code=True,
         )
         tokenizer = None
