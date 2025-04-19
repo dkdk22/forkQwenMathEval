@@ -110,7 +110,7 @@ def setup(args):
     available_gpus = os.environ["CUDA_VISIBLE_DEVICES"].split(",")
     if False:
         llm = LLM(
-            model=args.model_name_or_path,
+            model="QwQ-32B",
             tensor_parallel_size=1,
             pipeline_parallel_size=args.pipeline_parallel_size,
             max_model_len=2048,      # Limit context length
@@ -124,7 +124,7 @@ def setup(args):
             )
     else:
         llm, tokenizer = load_hf_lm_and_tokenizer(
-            model_name_or_path="Qwen/QwQ-32B",
+            model_name_or_path="QwQ-32B",
             load_in_half=True,
             use_fast_tokenizer=True,
             use_safetensors=args.use_safetensors,
