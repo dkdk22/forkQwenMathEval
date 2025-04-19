@@ -26,6 +26,7 @@ python3 -u math_eval.py \
     --use_vllm \
     --save_outputs \
     --overwrite \
+    --dtype=half \
 
 # English multiple-choice datasets
 DATA_NAME="mmlu_stem"
@@ -46,7 +47,8 @@ python3 -u math_eval.py \
     --use_vllm \
     --save_outputs \
     --overwrite \
-    --num_shots 5
+    --num_shots 5 \
+    --dtype=half \
 
 # English competition datasets
 DATA_NAME="aime24,amc23"
@@ -67,3 +69,4 @@ python3 -u math_eval.py \
     --use_vllm \
     --save_outputs \
     --overwrite \
+    --dtype=half \
